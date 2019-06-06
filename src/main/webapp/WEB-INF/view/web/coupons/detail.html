@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <title>点击复制，优惠无限</title>
+  <link href="/static/css/theme/mobile.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/theme/portal_basic.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/theme/theme.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+  <script src="/static/js/plugins/clipboard.min.js"></script>
+  <script>
+    
+    $(function () {
+      var tkl = getUrlParam('tkl');
+      var img_url = getUrlParam('imgUrl');
+      console.info(tkl);
+      console.info(img_url);
+      
+      $('#type-bimg').attr('src', img_url);
+      $('#np').text('￥'+ tkl +'￥');
+      $('#icopy').attr('data-clipboard-text', '￥'+ tkl +'￥');
+      $('#copy').val('￥'+ tkl +'￥');
+      
+      var clipboard = new Clipboard('.icopy');
+      clipboard.on('success',function(e) {
+        if (e.trigger.disabled == false || e.trigger.disabled == undefined) {
+          e.trigger.innerHTML = "复制成功，打开【手陶】购买";
+          e.trigger.style.backgroundColor = "#78bd33";
+          e.trigger.disabled = true;
+          setTimeout(function() {
+              e.trigger.innerHTML = "点击复制";
+              e.trigger.style.backgroundColor = "#fb6a65";
+              e.trigger.disabled = false;
+            },
+            2000);
+        }
+      });
+      clipboard.on('error',function(e) {
+        e.trigger.innerHTML = "复制失败,请手动复制";
+        e.trigger.style.backgroundColor = "#b5b4b4";
+      });
+    });
+    
+    function getUrlParam(paraName) {
+      var url = document.location.toString();
+      var arrObj = url.split("?");
+
+      if (arrObj.length > 1) {
+        var arrPara = arrObj[1].split("&");
+        var arr;
+
+        for (var i = 0; i < arrPara.length; i++) {
+          arr = arrPara[i].split("=");
+
+          if (arr != null && arr[0] == paraName) {
+            return arr[1];
+          }
+        }
+        return "";
+      }
+      else {
+        return "";
+      }
+    }
+
+  </script>
+</head>
+<body>
+<div id="phone-main" class="phone-main" style="left: 0px; top: 0px;">
+  <div class="mod mod-global-nav nav-header t5 center  no-icon   line  p-color-a-m20" data-component="{&quot;eid&quot;:&quot;system_plugin\/global-nav&quot;,&quot;name&quot;:&quot;mod-global-nav&quot;,&quot;version&quot;:&quot;6.15.188&quot;,&quot;ename&quot;:&quot;system_plugin\/global-nav&quot;,&quot;is_testing&quot;:&quot;&quot;}" style="margin:   ; opacity:1" data-nav-type="t5" data-opacity="1" data-body-class="" data-icon-class=" no-icon " data-role="nav-header"><div class="cell title "><span><a href="/">一个美丽的好心情~</a></span></div></div>             <div class="page-w " style="background-color:tranparent;background-size:;"><div id="page-content" class="page-content"><div class="mod mod-html"><style type="text/css">
+  body {
+    font-size: 14px;
+  }
+  .scenograph {
+    padding: 16px 16px 0;
+  }
+  .scenograph #type-bimg {
+    box-shadow: 0px 4px 8px rgba(21, 0, 71, .1);
+    width: 100%;
+  }
+  .drugsword {
+    margin: 14px;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .medicine-bag {
+    background: white;
+    border: 1px dashed #fb6a65;
+    padding: .5rem;
+    border-radius: 5px;
+  }
+  .copy-tip {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right, #f9c492, #fb6a65);
+    color: white;
+    font-size: 12px;
+    height: 24px;
+  }
+  .jtone {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid white;
+    border-bottom: 12px solid transparent;
+  }
+  .jtone::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid #fab189;
+    border-bottom: 12px solid transparent;
+  }
+  .jttwo {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid white;
+    border-bottom: 12px solid transparent;
+  }
+  .jttwo::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid #fa9b7e;
+    border-bottom: 12px solid transparent;
+  }
+  .jtthree {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid white;
+    border-bottom: 12px solid transparent;
+  }
+  .jtthree::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 10px solid #fa8673;
+    border-bottom: 12px solid transparent;
+  }
+  .icopy {
+    background: #fb6a65;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    margin: 16px auto;
+    padding: 10px;
+    margin-bottom: 2px;
+  }
+  .nomen-proprium {
+    font-size: 12px;
+    text-align: left;
+    color: #fb6a65;
+  }
+  .kz-float-layer {
+    height: 0px!important;
+  }
+  .kz-float-layer {
+    display: none!important;
+  }
+</style><div class="scenograph">
+  <img id="type-bimg" src="">
+</div><div class="drugsword">
+  <div class="medicine-bag">
+    <div>
+      <div id="cccccccckk" class="cccccccckk">
+        复制红框内信息打开→手
+        <a>
+          <img src="https://img.alicdn.com/imgextra/i1/2537963239/O1CN011ZnVKLbSaP1cLAQ_!!2537963239.png" style="width: 6%;">
+        </a>APP←即可领优惠券
+        <span id="np"></span>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" id="copy">
+  <div type="button" style="cursor: pointer" onclick="" data-clipboard-text="" data-clipboard-target="#copy" class="icopy" id="icopy" style="margin-bottom: 10px;">一键复制</div>
+  <input type="hidden" id="hidden_tkl">
+  <div id="copy-tip" class="copy-tip">
+    <span>长按框内</span>
+    <span class="jtone"></span>
+    <span>全选</span>
+    <span class="jttwo"></span>
+    <span>复制</span>
+    <span class="jtthree"></span>
+    <span>打开APP</span>
+  </div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>
